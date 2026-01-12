@@ -1,0 +1,181 @@
+:root {
+    --primary-red: #d63031;
+    --dark-red: #8b0000;
+    --gold: #d4af37;
+    --glass-white: rgba(255, 255, 255, 0.92);
+}
+
+body {
+    /* High-quality Valentine Background */
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    margin: 0;
+}
+
+.flyer-container {
+    background-color: var(--glass-white);
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    position: relative;
+    padding-bottom: 100px;
+    overflow: hidden;
+    border: 3px solid var(--primary-red);
+}
+
+/* Ribbon Header */
+.ribbon-header {
+    background: linear-gradient(45deg, var(--dark-red), var(--primary-red));
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin: -5px auto 40px;
+    width: 70%;
+    border-radius: 0 0 50px 50px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.ribbon-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.ribbon-header span {
+    font-size: 3.5rem;
+    font-family: 'Brush Script MT', cursive;
+    display: block;
+    color: #ffcccc;
+}
+
+/* Grid Layout */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 30px;
+}
+
+/* Package Card Styling */
+.package {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #ffecec;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.package:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(214, 48, 49, 0.2);
+}
+
+/* Labels/Badges */
+.badge {
+    background-color: var(--primary-red);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    box-shadow: 2px 2px 0px var(--dark-red);
+}
+
+.badge-black {
+    background-color: #e22a2a;
+}
+
+.badge-split {
+    display: flex;
+    background-color: var(--primary-red);
+    color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+}
+
+.badge-split .left { padding: 6px; flex-grow: 1; text-align: center; }
+.badge-split .right { background-color: var(--dark-red); padding: 6px 10px; }
+
+/* Lists */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    font-size: 0.85rem;
+    color: #362d2d;
+    padding: 4px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+ul li:last-child { border: none; }
+
+ul li::before {
+    content: "❤️";
+    font-size: 0.6rem;
+    margin-right: 8px;
+}
+
+.tagline {
+    font-size: 0.8rem;
+    color: #e84393;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.footer-banner {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to right, var(--dark-red), var(--primary-red));
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.footer-banner .address {
+    padding-left: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-banner .socials {
+    display: flex;
+    gap: 20px;
+    padding-right: 30px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .grid-layout { grid-template-columns: repeat(2, 1fr); }
+    .ribbon-header { width: 90%; }
+}
+
+@media (max-width: 500px) {
+    .grid-layout { grid-template-columns: 1fr; }
+}
